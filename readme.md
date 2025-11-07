@@ -211,7 +211,7 @@ This plugin uses the Philips JointSpace API v6. For advanced usage and additiona
 ## Support
 
 For issues and feature requests, please visit:
-[GitHub Issues](https://github.com/yourusername/homebridge-philips-tv-ambilight-extended/issues)
+[GitHub Issues](https://github.com/m2ert/homebridge-philips-tv-ambilight-extended/issues)
 
 ## License
 

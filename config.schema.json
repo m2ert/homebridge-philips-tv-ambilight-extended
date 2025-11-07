@@ -1,0 +1,102 @@
+{
+    "title": "Homebridge PhilipsTV Accessory Configuration",
+    "pluginAlias": "PhilipsTV",
+    "pluginType": "accessory",
+    "singular": false,
+    "headerDisplay": "Homebridge plugin for PhilipsTV.",
+    "footerDisplay": "For additional information visit [Plugin Homepage](https://github.com/m2ert/homebridge)",
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "title": "Name",
+                "type": "string",
+                "default": "Name of the Accessory"
+            },
+            "ip_address": {
+                "title": "IP address V4",
+                "type": "string",
+                "format": "ipv4",
+                "description": "IP address of the Television"
+            },
+            "poll_status_interval": {
+                "title": "Poll interval",
+                "type": "integer",
+                "minimum": 5,
+                "default": 30,
+                "description": "Polling interval of the TV"
+            },
+            "model_year": {
+                "title": "Model Year",
+                "type": "integer",
+                "default": 2016,
+                "description": "Model year of the TV"
+            },
+            "has_ambilight": {
+                "title": "Ambilight",
+                "type": "boolean",
+                "default": false,
+                "description": "Whether the TV has Ambilight feature exposed to Homebridge"
+            },
+            "wol_url": {
+                "title": "WOL url",
+                "type": "string",
+                "description": "Wake On LAN for TV"
+            },
+            "username": {
+                "title": "User Name",
+                "type": "string",
+                "description": "API username for TV"
+            },
+            "password": {
+                "title": "Password",
+                "type": "string",
+                "description": "API password for TV"
+            },
+            "inputs": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": { "type": "string", "description": "Name of the input" },
+                        "type": {
+                            "type": "string",
+                            "enum": ["channel", "launch"],
+                            "description": "Type of input"
+                        },
+                        "channel": {
+                            "type": "number",
+                            "description": "Number of the channel - Only use this when Channel is selected"
+                        },
+                        "launch": {
+                            "type": "object",
+                            "description": "Launch Application configuration - Do NOT fill this when Channel is selected",
+                            "properties": {
+                                "intent": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component": {
+                                            "type": "object",
+                                            "properties": {
+                                                "packageName": { "type": "string" },
+                                                "className": { "type": "string" }
+                                            }
+                                        },
+                                        "action": { "type": "string" }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": ["name", "type"]
+                }
+            }
+        },
+        "required": [
+            "name",
+            "ip_address",
+            "poll_status_interval",
+            "model_year"
+        ]
+    }
+}
