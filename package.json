@@ -1,6 +1,6 @@
 {
   "name": "homebridge-philips-tv-ambilight-extended",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Enhanced Homebridge plugin for Philips Android TV with proper TV icon, Ambilight control, and extended features",
   "main": "index.js",
   "scripts": {
